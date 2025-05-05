@@ -21,7 +21,6 @@ const getResultMessage = (score: number) => {
 
 export default function VocationalTest() {
   const [answers, setAnswers] = useState<(number | null)[]>(Array(vocationalQuestions.length).fill(null));
-  const [submitted, setSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
 
@@ -36,13 +35,11 @@ export default function VocationalTest() {
       setShowErrorModal(true);
       return;
     }
-    setSubmitted(true);
     setShowModal(true);
   };
 
   const handleReset = () => {
     setAnswers(Array(vocationalQuestions.length).fill(null));
-    setSubmitted(false);
     setShowModal(false);
   };
 
